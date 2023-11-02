@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 
 const lazyLoad = (Component: React.LazyExoticComponent<() => JSX.Element>) => {
@@ -15,7 +15,7 @@ const Result = lazy(() => import("@pages/result"));
 const Contact = lazy(() => import("@pages/contact"));
 const About = lazy(() => import("@pages/about"));
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: lazyLoad(Home),
