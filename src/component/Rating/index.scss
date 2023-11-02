@@ -1,0 +1,53 @@
+.rating {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 5rem;
+  padding: 0 3.5rem;
+
+  .rating-desc {
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  .rating-title {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+
+    & > p {
+      font-size: 0.875rem;
+      color: white;
+    }
+
+    .spacer {
+      flex: 1;
+    }
+  }
+
+  .rating-answer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .rating-item {
+      height: 3rem;
+      border: 2px solid #b01212;
+      background-color: #d87ba2;
+      flex: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        background-color: #d8c415;
+      }
+
+      & > p {
+        font-size: 1.25rem;
+        color: white;
+      }
+    }
+  }
+}

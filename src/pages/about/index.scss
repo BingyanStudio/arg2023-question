@@ -1,0 +1,28 @@
+.about {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 11rem 2rem 0;
+  background-image: url(../../assets/by.png);
+  background-repeat: none;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .about-thanks {
+    font-size: 2.5rem;
+  }
+
+  .about-title {
+    margin-top: 4rem;
+    font-size: 1.25rem;
+  }
+
+  .about-desc {
+    margin-top: 0.7rem;
+    font-size: 1.25rem;
+  }
+}

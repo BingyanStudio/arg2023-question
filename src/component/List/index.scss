@@ -1,0 +1,17 @@
+.list {
+  height: 100vh;
+  padding-bottom: 4rem;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.list-choice {
+    padding-top: 14.375rem;
+  }
+
+  &.list-rating {
+    padding-top: 2.5rem;
+  }
+}

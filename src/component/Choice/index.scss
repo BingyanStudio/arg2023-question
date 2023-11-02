@@ -1,0 +1,21 @@
+.choice {
+  position: relative;
+  width: 100%;
+
+  .desc {
+    position: relative;
+    margin: 0 3rem;
+    display: block;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .answer {
+    position: relative;
+    margin-top: 4rem;
+
+    & > div {
+      margin-bottom: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.contact {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 11rem 2rem 0;
+  background-image: url(../../assets/by.png);
+  background-repeat: none;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .contact-text {
+    word-wrap: none;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  .contact-desc {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .contact-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 3.5rem;
+    margin-top: 4rem;
+    padding: 0 1.5rem;
+    border: 4px solid #d87ba2;
+    border-radius: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 1.5rem;
+      color: white;
+    }
+  }
+}
