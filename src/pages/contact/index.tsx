@@ -10,9 +10,12 @@ export default function Contact() {
 
   const submitHandler = () => {
     axios
-      .post("api.hust.online/arg2023/api/v1/questionnaire/contact", { contact })
+      .post("https://api.hust.online/arg2023/api/v1/questionnaire/contact", {
+        contact,
+      })
       .then((res) => {
-        if (res.data.data.code === 200) navigate("/about");
+        console.log(res);
+        if (res.data.code === 200) navigate("/about");
       })
       .catch(() => {
         console.log("提交失败");
