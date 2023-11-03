@@ -14,7 +14,6 @@ export default function Contact() {
         contact,
       })
       .then((res) => {
-        console.log(res);
         if (res.data.code === 200) navigate("/about");
       })
       .catch(() => {
@@ -24,7 +23,6 @@ export default function Contact() {
 
   const inputHandler = (e: any) => {
     setContact(e.target.value);
-    console.log(e.target.value);
   };
 
   return (
