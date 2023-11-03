@@ -47,7 +47,7 @@ export default function List(props: ListProps) {
       return () => {
         if (item && listRef.current) {
           listRef.current.scrollTo({
-            top: item?.offsetTop - 64,
+            top: item?.offsetTop - 40,
             left: 0,
             behavior: "smooth",
           });
