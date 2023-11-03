@@ -9,7 +9,7 @@ export default function Home() {
     <div className="home">
       <div className="content">
         <Btn
-          style={{ top: "67vh", width: "11rem", height: "3.5rem" }}
+          style={{ top: "75vh", width: "11rem", height: "3.5rem" }}
           onClick={() => navigate("/question")}
           text="开始测试"
         ></Btn>
