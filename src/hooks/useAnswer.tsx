@@ -19,7 +19,7 @@ export default function useAnswer() {
   const submitAnswer = () => {
     axios
       .post("https://api.hust.online/arg2023/api/v1/questionnaire", {
-        answer,
+        answers: answer,
       })
       .then((res) => {
         console.log(res);
