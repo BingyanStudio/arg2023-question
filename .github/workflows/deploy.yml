@@ -1,0 +1,64 @@
+# This is a basic workflow to help you get started with Actions
+
+name: deploy
+
+# Controls when the workflow will run
+on:
+  push:
+    tags:
+      - '**'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # 切换分支
+      - name: 🚚 Get Latest Code
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      # set safe directory
+      - name: ⤵️ Git Actions
+        uses: srt32/git-actions@v0.0.3
+        with:
+          args: |
+            git config --global --add safe.directory /github/workspace
+      # 使用 node:18
+      - name: 🚀 use Node.js 18
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+      # npm install and build
+      - name: 🔨 npm install and build
+        run: |
+          npm ci
+          npm run build
+        env:
+          CI: true
+
+      # Deploy
+      - name: 📂 Sync files to remote server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          ARGS: "-altgoDzvO --delete"
+          SOURCE: "dist/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: /cygdrive/c/Users/ligen/arg2023-questionnaire/
+
+      # Run additional command in remote server
+      - name: 💻 Run additional command in remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: rsync -e "C:\Users\ligen\Downloads\cwrsync_6.2.5_x64_free\cwrsync_6.2.5_x64_free\bin\ssh.exe -p 22" -av /cygdrive/c/Users/ligen/arg2023-questionnaire/ 53.bingyan.net:/mnt/var/www/lyt/h5_static/arg2023/questionnaire
